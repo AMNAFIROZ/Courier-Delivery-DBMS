@@ -12,8 +12,10 @@ SELECT * FROM Shipment
 WHERE delivery_status = 'Delivered';
 
 -- 4. Find packages sent from Calicut
-SELECT * FROM Package
-WHERE sender_city = 'Calicut';
+SELECT p.package_id, c.name, c.city
+FROM Package p
+JOIN Customer c ON p.cust_id = c.cust_id
+WHERE c.city = 'Calicut';
 
 -- 5. Count total shipments
 SELECT COUNT(*) AS total_shipments FROM Shipment;
