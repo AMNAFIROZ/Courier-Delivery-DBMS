@@ -69,3 +69,17 @@ INSERT INTO Uses VALUES
 (3, 3, '2024-03-03', 'Route C', 'Active'),
 (4, 4, '2024-03-04', 'Route D', 'Inactive'),
 (5, 5, '2024-03-05', 'Route E', 'Active');
+
+
+-- Insert a test admin user
+-- NOTE: In a real app, 'admin123' would be a long, scrambled hash
+INSERT INTO System_Users (username, password_hash, role) 
+VALUES ('admin', 'admin123', 'Admin');
+
+INSERT INTO System_Users (username, password_hash, role, cust_id) VALUES 
+('admin', 'admin123', 'Admin', NULL),
+('aisha', 'aisha123', 'Customer', 1),
+('rahul', 'rahul123', 'Customer', 2),
+('neha', 'neha123', 'Customer', 3),
+('arun', 'arun123', 'Customer', 4),
+('meera', 'meera123', 'Customer', 5);
