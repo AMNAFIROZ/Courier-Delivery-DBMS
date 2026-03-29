@@ -1,0 +1,21 @@
+{
+  "tracking_no": "TRK101",
+  "status": "Delivered",
+  "send_date": "2024-03-01",
+  "delivery_date": "2024-03-03",
+  "customer": {
+    "name": "Aisha",
+    "phone": "9876543210",
+    "city": "Calicut"
+  },
+  "package": {
+    "type": "Electronics",
+    "weight": 2.5,
+    "description": "Mobile Phone"
+  },
+  "payment": {
+    "amount": 500.00,
+    "method": "UPI",
+    "status": "Completed"
+  }
+}

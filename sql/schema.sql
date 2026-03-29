@@ -42,7 +42,7 @@ CREATE TABLE Vehicle (
     FOREIGN KEY (branch_id) REFERENCES Branch(branch_id)
 );
 
--- PACKAGE TABLE (UPDATED)
+-- PACKAGE TABLE
 CREATE TABLE Package (
     package_id INT PRIMARY KEY,
     weight DECIMAL(5,2),
@@ -72,7 +72,7 @@ CREATE TABLE Shipment (
     FOREIGN KEY (agent_id) REFERENCES Delivery_Agent(agent_id)
 );
 
--- PAYMENT TABLE (UPDATED)
+-- PAYMENT TABLE
 CREATE TABLE Payment (
     payment_id INT PRIMARY KEY,
     amount DECIMAL(10,2),
@@ -110,4 +110,14 @@ CREATE TABLE Uses (
     PRIMARY KEY (agent_id, vehicle_id),
     FOREIGN KEY (agent_id) REFERENCES Delivery_Agent(agent_id),
     FOREIGN KEY (vehicle_id) REFERENCES Vehicle(vehicle_id)
+);
+
+-- SYSTEM USERS TABLE (UPDATED)
+CREATE TABLE System_Users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL,
+    cust_id INT NULL, 
+    FOREIGN KEY (cust_id) REFERENCES Customer(cust_id) ON DELETE SET NULL
 );
